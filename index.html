@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio Vrublevska</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+        integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption:400,700&display=swap&subset=cyrillic"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="menu-bgcolor" id="menu">
+            <div class="wrap">
+                <div class="menu">
+                    <div class="logo">
+                        <a href="#header" class="logo__link">Vryblevska</a>
+                    </div>
+                    <nav class="nav">
+                        <input type="checkbox" class="menuCheckbox" id="menuCheckbox">
+                        <label for="menuCheckbox" class="checkboxBtn">
+                            <span class="checkboxBtn__item"></span>
+                        </label>
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="#about" class="nav__link">about</a></li>
+                            <li class="nav__item"><a href="#skills" class="nav__link">skills</a></li>
+                            <li class="nav__item"><a href="#portfolio" class="nav__link">portfolio</a></li>
+                            <li class="nav__item"><a href="#contacts" class="nav__link">contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="headerText">
+                <div class="headerText__title">
+                    <h2>Nastia Vrublevska</h2>
+                </div>
+                <div class="headerText__slogan">
+                    <p>Junior Front-End Developer</p>
+                </div>
+                <div class="headerText__arrow">
+                    <a href="#portfolio" class="headerText__link"><i class="fas fa-angle-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="about" id="about">
+        <div class="wrap">
+            <div class="sectionText">
+                <h2 class="sectionText__title">About me</h2>
+                <div class="sectionText__hr"></div>
+            </div>
+            <div class="aboutFlex">
+                <div class="aboutFlex__foto">
+                    <img src="images/my-photo.png" alt="my-photo" class="aboutFlex__foto-size">
+                </div>
+                <div class="aboutFlex__text">
+                    <p>Hello! I am a junior front-end developer residing in Zhytomyr region. I am a graduate of IT-Hub's
+                        Front-End developer program where I learned a wide range of best practices in web development.
+                    </p>
+                    <p>I have no experience but I'm ready to work hard and makes a results.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <div class="wrap">
+            <div class="sectionText">
+                <h2 class="sectionText__title">My skills</h2>
+                <div class="sectionText__hr"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skillsValue">
+                    <div class="skillsValue__text">
+                        <p>HTML5</p>
+                        <p>80%</p>
+                    </div>
+                    <progress id="my-progress" value="80" max="100" class="skillsValue__value"></progress>
+                </div>
+                <div class="skillsValue">
+                    <div class="skillsValue__text">
+                        <p>CSS3</p>
+                        <p>70%</p>
+                    </div>
+                    <progress id="my-progress2" value="70" max="100" class="skillsValue__value"></progress>
+                </div>
+                <div class="skillsValue">
+                    <div class="skillsValue__text">
+                        <p>JS, jQuery</p>
+                        <p>50%</p>
+                    </div>
+                    <progress id="my-progress3" value="50" max="100" class="skillsValue__value"></progress>
+                </div>
+                <div class="skillsValue">
+                    <div class="skillsValue__text">
+                        <p>Vue</p>
+                        <p>20%</p>
+                    </div>
+                    <progress id="my-progress4" value="20" max="100" class="skillsValue__value"></progress>
+                </div>
+                <div class="skillsValue">
+                    <div class="skillsValue__text">
+                        <p>WordPress</p>
+                        <p>30%</p>
+                    </div>
+                    <progress id="my-progress5" value="30" max="100" class="skillsValue__value"></progress>
+                </div>
+                <div class="skillsValue">
+                    <div class="skillsValue__text">
+                        <p>Git</p>
+                        <p>40%</p>
+                    </div>
+                    <progress id="my-progress6" value="40" max="100" class="skillsValue__value"></progress>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <div class="wrap">
+            <div class="sectionText  sectionText-padding">
+                <h2 class="sectionText__title">My Works</h2>
+                <div class="sectionText__hr"></div>
+            </div>
+            <div class="portfolio__item portfolio__item-padding">
+                <div class="portfolio__img">
+                    <a href="works/bouncy/index.html" class="portfolio__link"><img src="images/portfolio/BOUNCY.png" alt="BOUNCY lending page"
+                            class="portfolio__img-size"></a>
+                </div>
+                <div class="portfolio__text">
+                    <a href="works/bouncy/index.html" class="portfolio__link">
+                        <h2 class="portfolio__text-title">BOUNCY Lending Page</h2>
+                    </a>
+                    <p class="portfolio__text-subtitle">Responsive site made with HTML5, CSS3, jQuery</p>
+                </div>
+            </div>
+            <div class="portfolio__item portfolio__item-padding portfolio__item-leftSide">
+                <div class="portfolio__text portfolio__text-leftSide">
+                    <a href="http://sixtynine/wp-admin/admin.php?page=SixtyNine&tab=1" class="portfolio__link">
+                        <h2 class="portfolio__text-title">SixtyNine Lending Page</h2>
+                    </a>
+                    <p class="portfolio__text-subtitle">Responsive site made with HTML5, CSS3, jQuery, WordPress</p>
+                </div>
+                <div class="portfolio__img">
+                    <a href="http://sixtynine/wp-admin/admin.php?page=SixtyNine&tab=1" class="portfolio__link"><img src="images/portfolio/Homepage.png"
+                            alt="SixtyNine lending page" class="portfolio__img-size"></a>
+                </div>
+            </div>
+            <div class="portfolio__item portfolio__item-padding">
+                <div class="portfolio__img">
+                    <a href="works/Smart-Agency/index.html" class="portfolio__link"><img src="images/portfolio/Main File.png"
+                            alt="Smart Agency lending page" class="portfolio__img-size"></a>
+                </div>
+                <div class="portfolio__text">
+                    <a href="works/Smart-Agency/index.html" class="portfolio__link">
+                        <h2 class="portfolio__text-title">Smart Agency Lending Page</h2>
+                    </a>
+                    <p class="portfolio__text-subtitle">Responsive site made with HTML5, CSS3, jQuery</p>
+                </div>
+            </div>
+            <div class="portfolio__item portfolio__item-padding portfolio__item-leftSide">
+                <div class="portfolio__text portfolio__text-leftSide">
+                    <a href="works/calc/index.html" class="portfolio__link">
+                        <h2 class="portfolio__text-title">Windows Calculator</h2>
+                    </a>
+                    <p class="portfolio__text-subtitle">Simple calculator made with HTML5, CSS3, jQuery</p>
+                </div>
+                <div class="portfolio__img">
+                    <a href="works/calc/index.html" class="portfolio__link"><img src="images/portfolio/calculator.png"
+                            alt="Windows calculator" class="portfolio__img-size"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contacts" id="contacts">
+        <div class="wrap">
+            <div class="sectionText sectionText-padding">
+                <h2 class="sectionText__title">Contact me</h2>
+                <div class="sectionText__hr"></div>
+            </div>
+            <div class="contacts-flex">
+                <div class="form">
+                    <form action="https://formspree.io/nastia.vrublevska89@gmail.com" method="POST" class="contactForm">
+                        <input type="text" name="name" placeholder="Your name" size="30" class="contactForm__input"
+                            required>
+                        <input type="email" name="_replyto" placeholder="Your email" size="30"
+                            class="contactForm__input" required>
+                        <textarea class="contactForm__textarea" name="message" placeholder="Your message" rows="8"
+                            required=""></textarea>
+                        <input type="submit" value="Send" class="contactForm__btm">
+                    </form>
+                </div>
+                <div class="socialLinks">
+                    <div class="socialLinks__item">
+                        <a href="https://www.instagram.com/nastia_vrublevska/?hl=ru" class="socialLinks__link"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="socialLinks__item">
+                        <a href="https://www.facebook.com/profile.php?id=100011457242217" class="socialLinks__link"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="socialLinks__item">
+                        <a href="https://www.linkedin.com/feed/" class="socialLinks__link"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="wrap">
+            <p class="footer__text">Copyright © 2019 by Vrublevska. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
