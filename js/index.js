@@ -1,14 +1,30 @@
 $(document).ready(function(){
    $(window).scroll(function(){
        let w = $(window).width();
+       let menu = $('#menu');
        if(w > 1024 && $(window).scrollTop() >= 600){
-            $('#menu').addClass('menu-fixed');
+           menu.addClass('menu-fixed');
         } else if (w <= 1024 && $(window).scrollTop() >= 800){
-            $('#menu').addClass('menu-fixed');
+           menu.addClass('menu-fixed');
         } else{
-            $('#menu').removeClass('menu-fixed');
+           menu.removeClass('menu-fixed');
        }
    });
+    $(window).scroll(function(){
+        if($(window).scrollTop() === 892){
+            let id = setInterval(progressBar, 10);
+            let progressValue = $('.skillsValue__value').val();
+            let progressMax = +$('.progress-max').html().slice(0,-1);
+            function progressBar(){
+                if(progressValue < progressMax){
+                    progressValue++;
+                    $('.skillsValue__value').attr('value', progressValue);
+                } else {
+                    clearInterval(id);
+                }
+            }
+        }
+    });
    $('.nav__link').on('click', function(){
        let hreffAttr = $(this).attr('href');
        let goTo = $(hreffAttr).offset().top;
@@ -27,4 +43,4 @@ $(document).ready(function(){
             scrollTop: 0
         }, 600);
     });
-})
+});
