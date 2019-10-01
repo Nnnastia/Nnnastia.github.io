@@ -10,21 +10,27 @@ $(document).ready(function(){
            menu.removeClass('menu-fixed');
        }
    });
+
     $(window).scroll(function(){
-        if($(window).scrollTop() === 892){
-            let id = setInterval(progressBar, 10);
-            let progressValue = $('.skillsValue__value').val();
-            let progressMax = +$('.progress-max').html().slice(0,-1);
-            function progressBar(){
-                if(progressValue < progressMax){
-                    progressValue++;
-                    $('.skillsValue__value').attr('value', progressValue);
-                } else {
-                    clearInterval(id);
+        if($(window).scrollTop() >= 890 && $(window).scrollTop() < 1000){
+            let myList = $('.skills-grid');
+            console.log(myList);
+
+                let id = setInterval(progressBar, 10);
+
+                function progressBar() {
+                    let progressValue = $('.skillsValue__value').val();
+                    let progressMax = +$('.progress-max').html().slice(0, -1);
+                    if (progressValue < progressMax) {
+                        progressValue++;
+                        $('.skillsValue__value').attr('value', progressValue);
+                    } else {
+                        clearInterval(id);
+                    }
                 }
-            }
         }
     });
+
    $('.nav__link').on('click', function(){
        let hreffAttr = $(this).attr('href');
        let goTo = $(hreffAttr).offset().top;
@@ -33,14 +39,16 @@ $(document).ready(function(){
         }, 600);
        return false;
    });
+
    $('.headerText__link').on('click', function () {
         $('html, body').animate({
             scrollTop: $('.portfolio').offset().top
         }, 600);
-    });
+   });
+
    $('.logo__link').on('click', function (){
         $('html, body').animate({
             scrollTop: 0
         }, 600);
-    });
+   });
 });
