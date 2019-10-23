@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<section class="checkout" id="app">
+    <div class="wrap">
+        <div class="checkout-item">
+            <img src="img/66-glass-png-image.png" alt="" class="background-img">
+            <div class="checkout-item-card">
+                <div class="checkout-menu">
+                    <ul>
+                        <li :class="{active: step == 1}" class="checkout-menu-item">Order Details</li>
+                        <li :class="{active: step == 2}" class="checkout-menu-item">Address & Shipping</li>
+                        <li :class="{active: step == 3}" class="checkout-menu-item">Checkout</li>
+                    </ul>
+                </div>
+                <div v-if="step == 1" class="order-details">
+                    <h1 class="checkout-title">Order Details</h1>
+                    <div class="product-card">
+                        <div class="product-description">
+                            <img src="img/ci-bird-dog-bourbon-whiskey-.jpeg" alt="" class="product-photo">
+                            <div class="product-text">
+                                <p>Bird Dog Kentucky</p>
+                                <p>Bourbon</p>
+                                <p>750ml</p>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <div class="price-item">
+                                <label for="quantity">Quantity</label>
+                                <select name="" id="quantity" v-model="quantity" required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="price-item">
+                                <p class="price-item-name">Subtotal</p>
+                                <p class="price-value">{{currency}}{{subTotalPrice()}}</p>
+                            </div>
+                            <div class="price-item">
+                                <p class="price-item-name">Shipping & Handling</p>
+                                <p class="price-value">{{currency}}5.99</p>
+                            </div>
+                            <div class="price-item">
+                                <p class="price-item-name">Tax</p>
+                                <p class="price-value">{{currency}}5.32</p>
+                            </div>
+                            <div class="price-item total">
+                                <p class="price-item-name">Total</p>
+                                <p class="price-value">{{currency}}{{totalPrice()}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-else-if="step == 2" class="address">
+                    <h1 class="checkout-title">Address & Shipping</h1>
+                    <div class="address-flex">
+                        <div class="address-item">
+                            <label for="country">Country</label>
+                            <input type="text" id="country">
+                        </div>
+                        <div class="address-item">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name">
+                        </div>
+                        <div class="address-item">
+                            <label for="street">Street</label>
+                            <input type="text" id="street">
+                        </div>
+                        <div class="address-item">
+                            <label for="house">Apt / Suite / Other</label>
+                            <input type="text" id="house">
+                        </div>
+                        <div class="address-item">
+                            <label for="code">Zip code</label>
+                            <input type="text" id="code">
+                        </div>
+                        <div class="address-item">
+                            <label for="city">City</label>
+                            <input type="text" id="city">
+                        </div>
+                    </div>
+                </div>
+                <div v-else-if="step == 3">
+                    <h1 class="checkout-title">Checkout</h1>
+                    <div class="checkout-flex">
+                        <div class="product-card">
+                            <div class="product-description">
+                                <img src="img/ci-bird-dog-bourbon-whiskey-.jpeg" alt="" class="product-photo">
+                                <div class="product-text">
+                                    <p>Bird Dog Kentucky</p>
+                                    <p>Bourbon</p>
+                                    <p>750ml</p>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <div class="price-item">
+                                    <label for="quantity1">Quantity</label>
+                                    <select name="" id="quantity1" v-model="quantity" required>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                                <div class="price-item">
+                                    <p class="price-item-name">Subtotal</p>
+                                    <p class="price-value">{{currency}}{{subTotalPrice()}}</p>
+                                </div>
+                                <div class="price-item">
+                                    <p class="price-item-name">Shipping & Handling</p>
+                                    <p class="price-value">{{currency}}5.99</p>
+                                </div>
+                                <div class="price-item">
+                                    <p class="price-item-name">Tax</p>
+                                    <p class="price-value">{{currency}}5.32</p>
+                                </div>
+                                <div class="price-item total">
+                                    <p class="price-item-name">Total</p>
+                                    <p class="price-value">{{currency}}{{totalPrice()}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-info-item">
+                                <label for="name">Your name</label>
+                                <input type="text" id="name" v-model="name" :class="{error: name.length < 2}">
+                            </div>
+                            <div class="client-info-item">
+                                <label for="phone">Your phone number</label>
+                                <input type="text" id="phone" placeholder="+38(099)999-99-99" v-model="phone" :class="{error: phone.length < 2}">
+                            </div>
+                            <div class="client-info-item">
+                                <label for="email">Your email</label>
+                                <input type="text" id="email" v-model="email" :class="{error: email.length < 2}">
+                            </div>
+                            <div class="client-info-item">
+                                <label for="field1">field1</label>
+                                <input type="text" id="field1" v-model="field1" :class="{error: field1.length < 2}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-else class="done">
+                    <p>Your order is accepted</p>
+                    <p>Thank you!</p>
+                </div>
+            </div>
+            <div class="controls">
+                <button v-if="step>1" v-on:click="step-=1">previous</button>
+                <button v-if="step>=1 && step<4" v-on:click="step+=1">next</button>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
