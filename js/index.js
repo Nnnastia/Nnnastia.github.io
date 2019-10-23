@@ -10,24 +10,25 @@ $(document).ready(function(){
            menu.removeClass('menu-fixed');
        }
    });
-
     $(window).scroll(function(){
         if($(window).scrollTop() >= 890 && $(window).scrollTop() < 1000){
-            let myList = $('.skills-grid');
-            console.log(myList);
 
-                let id = setInterval(progressBar, 10);
-
+            let id = setInterval(progressBar, 10);
                 function progressBar() {
                     let progressValue = $('.skillsValue__value').val();
-                    let progressMax = +$('.progress-max').html().slice(0, -1);
+                    let progressMax = $('.progress-max').each(function () {
+                       parseInt($(this).html());
+                    });
+                    console.log(progressMax);
                     if (progressValue < progressMax) {
                         progressValue++;
                         $('.skillsValue__value').attr('value', progressValue);
                     } else {
                         clearInterval(id);
                     }
+
                 }
+
         }
     });
 
