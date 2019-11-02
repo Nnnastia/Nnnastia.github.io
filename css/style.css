@@ -283,6 +283,8 @@
 .skills-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
     grid-gap: 3vw;
     padding: 60px 0;
 }
@@ -291,53 +293,20 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media(max-width:480px){
-    .skills-grid{
-        grid-template-columns: 1fr;
-        padding: 30px 0;
-        grid-gap: 0;
-
-    }
-}
-.skillsValue{
-    font-family: 'PT Sans Caption', sans-serif;
-    font-size: 20px;
-    color: #777676;
-}
-.skillsValue__text{
-    display: flex;
-    justify-content: space-between;
-}
-.skillsValue__value{
+.skills-item{
+    max-width: 110px;
     width: 100%;
-    margin: 0 0 30px;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #c4c4c4;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset;
-    border-radius: 8px;
-    border: none;
 }
-@media(max-width:480px){
-    .skillsValue__value{
-        margin: 0 0 5px;
-    }
-    .skillsValue__text p{
-        margin-bottom: 5px;
-    }
+.skills-image{
+    width: 100%;
 }
-.skillsValue__value[value]::-webkit-progress-bar{
-    background-color: #c4c4c4;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset;
+.html5-image{
+    width: 64%;
+    padding-left: 12px;
 }
-.skillsValue__value[value]::-webkit-progress-value{
-    background-color: #204c9c;
-    border-radius: 8px;
-}
-.skillsValue__value[value]::-moz-progress-bar{ 
-    background-color: #204c9c;
-    border-radius: 8px;
+.js-image,
+.vue-image{
+    width: 90%;
 }
 .portfolio{
     padding: 40px 0;
